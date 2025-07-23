@@ -1385,6 +1385,22 @@
             flex-direction: row-reverse;
         }
 
+        /* Keep phone numbers and emails LTR in RTL mode */
+        .contact-info p,
+        .footer-section p,
+        .info-text p {
+            direction: ltr;
+            text-align: left;
+        }
+
+        body[dir="rtl"] .contact-info p,
+        body[dir="rtl"] .footer-section p,
+        body[dir="rtl"] .info-text p {
+            direction: ltr;
+            text-align: right;
+            unicode-bidi: embed;
+        }
+
         /* Scroll Progress Bar */
         .scroll-progress {
             position: fixed;
@@ -1674,7 +1690,7 @@
                 </div>
                 <h3 data-en="IRS Representation" data-ar="تمثيل ضريبي">IRS Representation</h3>
                 <p data-en="Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business."
-                   data-ar="تمثيل مهني لمراجعات مصلحة الضرائب والطعون وخدمات حل الضرائب.">
+                   data-ar="تمثيل مهني لمراجعات مصلحة الضرائب و��لطعون وخدمات حل الضرائب.">
                     Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business.
                 </p>
             </div>
