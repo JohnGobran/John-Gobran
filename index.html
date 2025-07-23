@@ -1085,6 +1085,13 @@
             color: var(--white);
             transition: all 0.3s ease;
             font-family: inherit;
+            font-size: 16px; /* Prevents zoom on iOS */
+            line-height: 1.5;
+            min-height: 44px; /* Touch target size */
+            touch-action: manipulation;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
 
         .form-group input:focus,
@@ -1983,7 +1990,7 @@
                         </div>
                         <div>
                             <h4 data-en="Client Focused" data-ar="محور العميل">Client Focused</h4>
-                            <p data-en="Your financial success is our priority" data-ar="نجاح�� المالي هو أولويتنا">Your financial success is our priority</p>
+                            <p data-en="Your financial success is our priority" data-ar="نجاحك المالي هو أولويتنا">Your financial success is our priority</p>
                         </div>
                     </div>
                     <div class="experience-card">
@@ -2123,7 +2130,7 @@
                 </div>
                 <div class="service-content" style="padding: 1.5rem;">
                     <h3 data-en="Deduction Optimization" data-ar="تحسين الخصومات">Deduction Optimization</h3>
-                    <p data-en="Expert guidance on maximizing your tax deductions, including property taxes, business expenses, and more." data-ar="إرشادات الخبراء حول تعظيم الخصومات الضريبية، بما في ذلك ضرائب العقارات ومصاريف الأعمال وأكثر.">Expert guidance on maximizing your tax deductions, including property taxes, business expenses, and more.</p>
+                    <p data-en="Expert guidance on maximizing your tax deductions, including property taxes, business expenses, and more." data-ar="إرشادات الخبراء حول تعظيم الخصومات ا��ضريبية، بما في ذلك ضرائب العقارات ومصاريف الأعمال وأكثر.">Expert guidance on maximizing your tax deductions, including property taxes, business expenses, and more.</p>
                 </div>
             </div>
         </div>
@@ -2264,7 +2271,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3 data-en="Universal Financial LLC" data-ar="يونيفيرسال فاينانشيال">Universal Financial LLC</h3>
-                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك الموثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من البرة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
+                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك الموثوق في الخدمات المالية. متخصص في إعدا�� الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من البرة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/John-Gobran-Realtor-100057052945814/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="social-link"><i class="fas fa-home"></i></a>
@@ -2340,7 +2347,7 @@
                     <input type="date" id="bookingDate" required>
                 </div>
                 <div class="form-group">
-                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوق�� المفضل">Preferred Time</label>
+                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوقت المفضل">Preferred Time</label>
                     <select id="bookingTime" required>
                         <option value="">Select Time</option>
                         <option value="9:00 AM">9:00 AM</option>
