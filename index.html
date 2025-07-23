@@ -428,6 +428,11 @@
             box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
         }
 
+        .btn-primary:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
+        }
+
         .btn-secondary {
             background: var(--glass);
             color: var(--white);
@@ -439,6 +444,25 @@
             background: var(--glass-border);
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-1px);
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        /* Touch-specific styles */
+        @media (hover: none) and (pointer: coarse) {
+            .btn:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            .btn:active {
+                transform: scale(0.98);
+                transition-duration: 0.1s;
+            }
         }
 
         .hero-visual {
@@ -1959,7 +1983,7 @@
                         </div>
                         <div>
                             <h4 data-en="Client Focused" data-ar="محور العميل">Client Focused</h4>
-                            <p data-en="Your financial success is our priority" data-ar="نجاحك المالي هو أولويتنا">Your financial success is our priority</p>
+                            <p data-en="Your financial success is our priority" data-ar="نجاح�� المالي هو أولويتنا">Your financial success is our priority</p>
                         </div>
                     </div>
                     <div class="experience-card">
@@ -1977,7 +2001,7 @@
                         </div>
                         <div>
                             <h4 data-en="Full Service" data-ar="خدمة شاملة">Full Service</h4>
-                            <p data-en="Tax, payroll & bookkeeping solutions" data-ar="حلول الضرائب والرواتب ومس�� الدفاتر">Tax, payroll & bookkeeping solutions</p>
+                            <p data-en="Tax, payroll & bookkeeping solutions" data-ar="حلول الضرائب والرواتب ومسك الدفاتر">Tax, payroll & bookkeeping solutions</p>
                         </div>
                     </div>
                 </div>
@@ -2089,7 +2113,7 @@
                 </div>
                 <div class="service-content" style="padding: 1.5rem;">
                     <h3 data-en="Property Tax Expertise" data-ar="خبرة ضرائب العقارات">Property Tax Expertise</h3>
-                    <p data-en="Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes." data-ar="معرفة متخصصة في شؤ��ن ضرائب العقارات والتقييمات والاستئنافات لمساعدتك في توفير المال على ضرائب عقاراتك.">Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes.</p>
+                    <p data-en="Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes." data-ar="معرفة متخصصة في شؤون ضرائب العقارات والتقييمات والاستئنافات لمساعدتك في توفير المال على ضرائب عقاراتك.">Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes.</p>
                 </div>
             </div>
 
@@ -2316,7 +2340,7 @@
                     <input type="date" id="bookingDate" required>
                 </div>
                 <div class="form-group">
-                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوقت المفضل">Preferred Time</label>
+                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوق�� المفضل">Preferred Time</label>
                     <select id="bookingTime" required>
                         <option value="">Select Time</option>
                         <option value="9:00 AM">9:00 AM</option>
