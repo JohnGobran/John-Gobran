@@ -1807,6 +1807,62 @@
             }
         }
 
+        /* Mobile image optimizations */
+        @media (max-width: 768px) {
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .hero-profile-image,
+            .about-image-inner img {
+                image-rendering: optimizeQuality;
+                image-rendering: -webkit-optimize-contrast;
+            }
+
+            /* Lazy loading and performance */
+            .service-image img,
+            .property-image img {
+                loading: lazy;
+                decoding: async;
+            }
+        }
+
+        /* Custom CSS variables for viewport height */
+        :root {
+            --vh: 1vh;
+        }
+
+        /* Fix for mobile viewport */
+        .mobile-menu {
+            height: calc(var(--vh, 1vh) * 100);
+        }
+
+        /* Improved scroll behavior */
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* Better focus styles for accessibility */
+        *:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Remove focus outline for mouse users only */
+        .js-focus-visible *:focus:not(.focus-visible) {
+            outline: none;
+        }
+
         /* RTL Styles */
         body[dir="rtl"] {
             text-align: right;
@@ -2162,7 +2218,7 @@
                 </div>
                 <div class="service-content" style="padding: 1.5rem;">
                     <h3 data-en="Property Tax Expertise" data-ar="خبرة ضرائب العقارات">Property Tax Expertise</h3>
-                    <p data-en="Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes." data-ar="معرفة متخصصة في شؤون ضرائب العقارات والتقييمات والاستئنافات لمساعدتك في توفير المال على ضرائب عقاراتك.">Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes.</p>
+                    <p data-en="Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes." data-ar="معرفة متخصصة في شؤون ضرائب العقارات والتقييما�� والاستئنافات لمساعدتك في توفير المال على ضرائب عقاراتك.">Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes.</p>
                 </div>
             </div>
 
@@ -2225,7 +2281,7 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="info-text">
-                        <h4 data-en="Email" data-ar="بريد إلكتروني">Email</h4>
+                        <h4 data-en="Email" data-ar="بري�� إلكتروني">Email</h4>
                         <p class="email-address">john_asham@yahoo.com</p>
                     </div>
                 </div>
@@ -2333,7 +2389,7 @@
             </div>
 
             <div class="footer-section">
-                <h3 data-en="Areas Served" data-ar="المناطق المخدومة">Areas Served</h3>
+                <h3 data-en="Areas Served" data-ar="المناطق الم��دومة">Areas Served</h3>
                 <ul class="footer-links">
                     <li><a href="#" data-en="Antioch" data-ar="أنطاكية">Antioch</a></li>
                     <li><a href="#" data-en="Nashville" data-ar="ناشفيل">Nashville</a></li>
