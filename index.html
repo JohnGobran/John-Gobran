@@ -2069,7 +2069,7 @@
             <div class="hero-cta">
                 <button class="btn btn-primary" onclick="openBookingModal()">
                     <i class="fas fa-calendar-check"></i>
-                    <span data-en="Book Consultation" data-ar="احجز ��ستشارة">Book Consultation</span>
+                    <span data-en="Book Consultation" data-ar="احجز استشارة">Book Consultation</span>
                 </button>
                 <a href="#services" class="btn btn-secondary">
                     <i class="fas fa-calculator"></i>
@@ -2344,7 +2344,7 @@
                     <h4 data-en="Office Hours" data-ar="ساعات العمل">Office Hours</h4>
                     <div class="hours-grid">
                         <div class="hours-item">
-                            <span data-en="Monday - Friday" data-ar="الا��نين - الجمعة">Monday - Friday</span>
+                            <span data-en="Monday - Friday" data-ar="الاثنين - الجمعة">Monday - Friday</span>
                             <span data-en="8:00 AM - 8:00 PM" data-ar="8:00 ص - 8:00 م">8:00 AM - 8:00 PM</span>
                         </div>
                         <div class="hours-item">
@@ -2364,7 +2364,7 @@
                     <input type="hidden" name="form-name" value="contact">
                     <input type="hidden" name="bot-field">
                     <input type="hidden" name="to" value="john_asham@yahoo.com">
-                    <h3 data-en="Send Message" data-ar="إر��ال رسالة">Send Message</h3>
+                    <h3 data-en="Send Message" data-ar="إرسال رسالة">Send Message</h3>
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="firstName" data-en="First Name" data-ar="الاسم الأول">First Name</label>
@@ -2807,21 +2807,24 @@
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
 
-            // Method 1: Try Formspree (simple static form service)
-            const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID'; // Replace with your Formspree form ID
+            // Method 1: Try Web3Forms (simple and free for static sites)
+            const web3formsEndpoint = 'https://api.web3forms.com/submit';
 
-            fetch(formspreeEndpoint, {
+            // Add your Web3Forms access key (get it free from web3forms.com)
+            formData.append('access_key', 'YOUR_ACCESS_KEY'); // Replace with your Web3Forms access key
+            formData.append('subject', `Financial Services Inquiry from ${data.firstName} ${data.lastName}`);
+            formData.append('from_name', `${data.firstName} ${data.lastName}`);
+
+            fetch(web3formsEndpoint, {
                 method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
                 body: formData
-            }).then(response => {
-                if (response.ok) {
+            }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
                     showMessage('Thank you for your message! We will get back to you soon.');
                     this.reset();
                 } else {
-                    throw new Error('Formspree failed');
+                    throw new Error('Web3Forms failed: ' + data.message);
                 }
             }).catch(error => {
                 // Method 2: Fallback to Netlify forms
