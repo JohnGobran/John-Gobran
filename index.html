@@ -1636,7 +1636,7 @@
                 </div>
                 <h3 data-en="Property Management" data-ar="إدارة الممتلكات">Property Management</h3>
                 <p data-en="Comprehensive management services for rental properties, ensuring optimal performance and tenant satisfaction."
-                   data-ar="خدمات إدارة شاملة للعقارات المؤج��ة، مما يضمن الأداء الأمثل ورضا المستأجرين.">
+                   data-ar="خدمات إدارة شاملة للعقارات المؤجرة، مما يضمن الأداء الأمثل ورضا المستأجرين.">
                     Comprehensive management services for rental properties, ensuring optimal performance and tenant satisfaction.
                 </p>
             </div>
@@ -1776,7 +1776,7 @@
 
         <div class="contact-container">
             <div class="contact-info">
-                <h3 data-en="Let's Connect" data-ar="دعنا نتواصل">Let's Connect</h3>
+                <h3 data-en="Let's Connect" data-ar="د��نا نتواصل">Let's Connect</h3>
 
                 <div class="info-card">
                     <div class="info-icon">
@@ -2076,19 +2076,7 @@
             setTimeout(typeWriter, 1000);
         }
 
-        // Particles animation
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
+        // Particles animation - Removed for performance
 
         // Property filtering
         function filterProperties(category) {
