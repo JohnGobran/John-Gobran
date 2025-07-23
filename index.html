@@ -1386,19 +1386,18 @@
         }
 
         /* Keep phone numbers and emails LTR in RTL mode */
-        .contact-info p,
-        .footer-section p,
-        .info-text p {
+        .phone-number,
+        .email-address {
             direction: ltr;
-            text-align: left;
+            unicode-bidi: embed;
+            display: inline-block;
         }
 
-        body[dir="rtl"] .contact-info p,
-        body[dir="rtl"] .footer-section p,
-        body[dir="rtl"] .info-text p {
+        body[dir="rtl"] .phone-number,
+        body[dir="rtl"] .email-address {
             direction: ltr;
-            text-align: right;
             unicode-bidi: embed;
+            display: inline-block;
         }
 
         /* Scroll Progress Bar */
@@ -1519,7 +1518,7 @@
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" data-count="500">0</span>+
-                    <span class="stat-label" data-en="Happy Clients" data-ar="عملاء راضو��">Happy Clients</span>
+                    <span class="stat-label" data-en="Happy Clients" data-ar="عملاء راضون">Happy Clients</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" data-count="2000">0</span>+
@@ -1623,7 +1622,7 @@
     <section class="services" id="services">
         <div class="section-header">
             <p class="section-subtitle" data-en="OUR SERVICES" data-ar="خدماتنا">OUR SERVICES</p>
-            <h2 class="section-title" data-en="Professional Financial Services" data-ar="��دمات مالية محترفة">
+            <h2 class="section-title" data-en="Professional Financial Services" data-ar="خدمات مالية محترفة">
                 Professional Financial Services
             </h2>
         </div>
@@ -1874,7 +1873,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3 data-en="Universal Financial LLC" data-ar="يونيفيرسال فاينانشيال">Universal Financial LLC</h3>
-                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك الموثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من الخبرة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
+                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك الموثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من ال��برة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/John-Gobran-Realtor-100057052945814/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="social-link"><i class="fas fa-home"></i></a>
