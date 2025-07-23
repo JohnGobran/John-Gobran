@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Gobran - Elite Real Estate Agent | Nashville, TN</title>
+    <title>John Gobran - Universal Financial LLC | Tax Services, Payroll & Bookkeeping</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0a0e27;
-            --secondary: #1e3a8a;
-            --accent: #f59e0b;
-            --accent-glow: #fbbf24;
-            --text-light: #94a3b8;
-            --bg-dark: #030712;
-            --bg-darker: #020617;
-            --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #ffffff;
+            --secondary: #2563eb;
+            --accent: #1d4ed8;
+            --accent-glow: #3b82f6;
+            --text-light: #64748b;
+            --bg-dark: #ffffff;
+            --bg-darker: #f8fafc;
+            --white: #1e293b;
+            --glass: rgba(37, 99, 235, 0.05);
+            --glass-border: rgba(37, 99, 235, 0.1);
         }
 
         * {
@@ -30,33 +30,12 @@
             background: var(--bg-dark);
             color: var(--white);
             overflow-x: hidden;
-            cursor: none;
         }
 
-        /* Custom Cursor */
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            transition: all 0.1s ease;
-            z-index: 9999;
-            mix-blend-mode: difference;
-        }
-
+        /* Custom Cursor - Removed */
+        .cursor,
         .cursor-follower {
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            opacity: 0.3;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            z-index: 9998;
-            filter: blur(5px);
+            display: none;
         }
 
         /* Scrollbar */
@@ -260,7 +239,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 60vh;
             position: relative;
             display: flex;
             align-items: center;
@@ -277,53 +256,22 @@
             z-index: -2;
         }
 
+        /* Particles - Simplified */
         .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            display: none;
         }
 
         .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: float 20s infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
+            display: none;
         }
 
         .hero-gradient {
             position: absolute;
-            width: 150%;
-            height: 150%;
-            top: -25%;
-            left: -25%;
-            background: radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
-            animation: gradient-shift 10s ease-in-out infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
         }
 
         .hero-content {
@@ -332,9 +280,10 @@
             gap: 4rem;
             align-items: center;
             max-width: 1400px;
-            margin: 0 auto;
+            margin: -200px auto 0;
             position: relative;
             z-index: 1;
+            padding: 0 5%;
         }
 
         .hero-text h1 {
@@ -388,30 +337,39 @@
 
         .hero-stats {
             display: flex;
-            gap: 3rem;
+            gap: 2rem;
             margin: 2.5rem 0;
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.7s forwards;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .stat-item {
             position: relative;
+            text-align: center;
+            min-width: 120px;
+            flex: 1;
+            max-width: 180px;
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--accent), var(--accent-glow));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: block;
-            line-height: 1;
+            line-height: 1.2;
+            white-space: nowrap;
         }
 
         .stat-label {
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-top: 0.5rem;
+            line-height: 1.3;
+            word-wrap: break-word;
         }
 
         .hero-cta {
@@ -482,17 +440,22 @@
             align-items: center;
         }
 
-        .hero-3d {
-            width: 500px;
-            height: 500px;
+        .hero-image-container {
+            width: 400px;
+            height: 400px;
             position: relative;
-            transform-style: preserve-3d;
-            animation: rotate3d 20s linear infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        @keyframes rotate3d {
-            from { transform: rotateY(0deg) rotateX(0deg); }
-            to { transform: rotateY(360deg) rotateX(360deg); }
+        .hero-profile-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
         }
 
         .hero-shape {
@@ -501,24 +464,12 @@
             height: 100%;
             background: linear-gradient(135deg, var(--accent), var(--secondary));
             opacity: 0.1;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            animation: morph 8s ease-in-out infinite;
+            border-radius: 50%;
         }
 
         .hero-shape:nth-child(2) {
-            animation-delay: -4s;
             background: linear-gradient(135deg, var(--secondary), var(--accent-glow));
-        }
-
-        @keyframes morph {
-            0%, 100% {
-                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-                transform: rotate(0deg);
-            }
-            50% {
-                border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-                transform: rotate(180deg);
-            }
+            transform: scale(0.8);
         }
 
         .hero-icon {
@@ -532,7 +483,7 @@
             filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.5));
         }
 
-        /* Floating Elements */
+        /* Floating Elements - Simplified */
         .floating-card {
             position: absolute;
             background: var(--glass);
@@ -540,13 +491,7 @@
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: float-card 6s ease-in-out infinite;
-        }
-
-        @keyframes float-card {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
         }
 
         .floating-card.card-1 {
@@ -1411,6 +1356,15 @@
                 align-items: center;
                 gap: 1.5rem;
             }
+
+            .stat-item {
+                min-width: 100px;
+                max-width: 200px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
         }
 
         /* RTL Styles */
@@ -1429,6 +1383,21 @@
 
         body[dir="rtl"] .experience-card {
             flex-direction: row-reverse;
+        }
+
+        /* Keep phone numbers and emails LTR in RTL mode */
+        .phone-number,
+        .email-address {
+            direction: ltr;
+            unicode-bidi: embed;
+            display: inline-block;
+        }
+
+        body[dir="rtl"] .phone-number,
+        body[dir="rtl"] .email-address {
+            direction: ltr;
+            unicode-bidi: embed;
+            display: inline-block;
         }
 
         /* Scroll Progress Bar */
@@ -1487,19 +1456,17 @@
     <!-- Scroll Progress -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
+    <!-- Custom Cursor - Removed -->
 
     <!-- Header -->
     <header id="header">
         <nav>
-            <a href="#" class="logo">JOHN GOBRAN</a>
+            <a href="#" class="logo">UNIVERSAL FINANCIAL LLC</a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
                 <li><a href="#about" class="nav-link" data-en="About" data-ar="حول">About</a></li>
                 <li><a href="#services" class="nav-link" data-en="Services" data-ar="الخدمات">Services</a></li>
-                <li><a href="#properties" class="nav-link" data-en="Properties" data-ar="العقارات">Properties</a></li>
+                <li><a href="#services" class="nav-link" data-en="Services" data-ar="الخدمات">Services</a></li>
                 <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="اتصل">Contact</a></li>
                 <li><button class="lang-toggle" onclick="toggleLanguage()">العربية</button></li>
             </ul>
@@ -1512,7 +1479,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <span class="logo">JOHN GOBRAN</span>
+            <span class="logo">UNIVERSAL FINANCIAL LLC</span>
             <button class="close-modal" onclick="toggleMobileMenu()">
                 <i class="fas fa-times"></i>
             </button>
@@ -1521,7 +1488,7 @@
             <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
             <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
             <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
-            <li><a href="#properties" onclick="toggleMobileMenu()">Properties</a></li>
+            <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
             <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
         </ul>
         <button class="lang-toggle" onclick="toggleLanguage()" style="width: 100%; margin-top: 2rem;">العربية</button>
@@ -1530,73 +1497,60 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <div class="particles" id="particles"></div>
             <div class="hero-gradient"></div>
         </div>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>
-                    <span id="heroTitle"></span>
-                </h1>
-                <p class="hero-subtitle" data-en="Elite Real Estate Agent in Nashville, TN" data-ar="وكيل عقارات النخبة في ناشفيل، تينيسي">
-                    Elite Real Estate Agent in Nashville, TN
-                </p>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="5">0</span>+
-                        <span class="stat-label" data-en="Years Experience" data-ar="سنوات الخبرة">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="70">0</span>+
-                        <span class="stat-label" data-en="Properties Sold" data-ar="العقارات المباعة">Properties Sold</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="40">0</span>M+
-                        <span class="stat-label" data-en="Total Sales" data-ar="إجمالي المبيعات">Total Sales</span>
-                    </div>
-                </div>
-                
-                <div class="hero-cta">
-                    <button class="btn btn-primary" onclick="openBookingModal()">
-                        <i class="fas fa-calendar-check"></i>
-                        <span data-en="Book Consultation" data-ar="احجز استشارة">Book Consultation</span>
-                    </button>
-                    <a href="#properties" class="btn btn-secondary">
-                        <i class="fas fa-building"></i>
-                        <span data-en="View Properties" data-ar="عرض العقارات">View Properties</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="hero-3d">
-                    <div class="hero-shape"></div>
-                    <div class="hero-shape"></div>
-                    <i class="fas fa-home hero-icon"></i>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Floating Cards -->
-        <div class="floating-card card-1">
-            <h4>$40M+</h4>
-            <p>Total Sales Volume</p>
-        </div>
-        
-        <div class="floating-card card-2">
-            <h4>70+</h4>
-            <p>Happy Clients</p>
-        </div>
     </section>
+
+    <!-- Hero Content (moved outside hero section) -->
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>
+                <span id="heroTitle"></span>
+            </h1>
+            <p class="hero-subtitle" data-en="Professional Tax Services, Payroll & Bookkeeping in Antioch, TN" data-ar="خدمات ضريبية محترفة، رواتب ومسك دفاتر في أنطاكية، تينيسي">
+                Professional Tax Services, Payroll & Bookkeeping in Antioch, TN
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="10">0</span>+
+                    <span class="stat-label" data-en="Years Experience" data-ar="سنوات الخبرة">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span>+
+                    <span class="stat-label" data-en="Happy Clients" data-ar="عملاء راضون">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="2000">0</span>+
+                    <span class="stat-label" data-en="Tax Returns Filed" data-ar="إقرارات ضريبية مقدمة">Tax Returns Filed</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="openBookingModal()">
+                    <i class="fas fa-calendar-check"></i>
+                    <span data-en="Book Consultation" data-ar="احجز استشارة">Book Consultation</span>
+                </button>
+                <a href="#services" class="btn btn-secondary">
+                    <i class="fas fa-calculator"></i>
+                    <span data-en="View Services" data-ar="عرض الخدمات">View Services</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <img src="https://cdn.builder.io/api/v1/image/assets%2Fe8f4ccc7560240bfaa08dfe5f8b6e889%2Fbe9272c329f64e42b9cf18ac913f613f?format=webp&width=800" alt="John Gobran - Universal Financial LLC" class="hero-profile-image">
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="about" id="about">
         <div class="section-header">
-            <p class="section-subtitle" data-en="ABOUT ME" data-ar="نبذة عني">ABOUT ME</p>
-            <h2 class="section-title" data-en="Your Trusted Real Estate Expert" data-ar="خبير العقارات الموثوق">
-                Your Trusted Real Estate Expert
+            <p class="section-subtitle" data-en="ABOUT US" data-ar="عنا">ABOUT US</p>
+            <h2 class="section-title" data-en="Your Trusted Financial Services Partner" data-ar="شريكك الموثوق في الخدمات المالية">
+                Your Trusted Financial Services Partner
             </h2>
         </div>
         
@@ -1604,22 +1558,22 @@
             <div class="about-image">
                 <div class="about-image-wrapper">
                     <div class="about-image-inner">
-                        <i class="fas fa-user-tie"></i>
+                        <img src="pfp.jpg" alt="John Gobran - Universal Financial LLC" style="width: 100%; height: 100%; object-fit: cover; border-radius: 26px;">
                     </div>
                 </div>
             </div>
             
             <div class="about-content">
-                <h3 data-en="John Gobran - Making Dreams Come True" data-ar="جون جبران - تحقيق الأحلام">
-                    John Gobran - Making Dreams Come True
+                <h3 data-en="John Gobran - Universal Financial LLC" data-ar="جون جبران - يونيفيرسال فاينانشيال">
+                    John Gobran - Universal Financial LLC
                 </h3>
-                <p data-en="With over 5 years of dedicated experience in Middle Tennessee's real estate market, I've built a reputation for exceptional service and outstanding results. Having successfully closed over 70 transactions totaling more than $40 million, I bring unparalleled expertise to every client relationship."
-                   data-ar="مع أكثر من 5 سنوات من الخبرة المتخصصة في سوق العقارات في وسط تينيسي، لقد بنيت سمعة للخدمة الاستثنائية والنتائج المتميزة.">
-                    With over 5 years of dedicated experience in Middle Tennessee's real estate market, I've built a reputation for exceptional service and outstanding results. Having successfully closed over 70 transactions totaling more than $40 million, I bring unparalleled expertise to every client relationship.
+                <p data-en="With over 10 years of dedicated experience in financial services, Universal Financial LLC has built a reputation for exceptional service and outstanding results. We specialize in comprehensive tax services, payroll management, and professional bookkeeping for individuals and businesses throughout Middle Tennessee."
+                   data-ar="مع أكثر من 10 سنوات من الخبرة المتخصصة في الخدمات المالية">
+                    With over 10 years of dedicated experience in financial services, Universal Financial LLC has built a reputation for exceptional service and outstanding results. We specialize in comprehensive tax services, payroll management, and professional bookkeeping for individuals and businesses throughout Middle Tennessee.
                 </p>
-                <p data-en="As a proud owner of commercial properties in Poplasa, Antioch TN, I understand both sides of real estate investment. My properties are currently available for lease to businesses and entrepreneurs looking for prime commercial space."
-                   data-ar="كمالك فخور للعقارات التجارية في بوبلاسا، أنطاكية تينيسي، أفهم جانبي الاستثمار العقاري.">
-                    As a proud owner of commercial properties in Poplasa, Antioch TN, I understand both sides of real estate investment. My properties are currently available for lease to businesses and entrepreneurs looking for prime commercial space.
+                <p data-en="Located in the heart of Antioch, TN, we provide personalized financial solutions that help our clients maximize their financial potential. From tax preparation and planning to ongoing bookkeeping support, we're here to simplify your financial life."
+                   data-ar="موجودون في قلب أنطاكية، تينيسي">
+                    Located in the heart of Antioch, TN, we provide personalized financial solutions that help our clients maximize their financial potential. From tax preparation and planning to ongoing bookkeeping support, we're here to simplify your financial life.
                 </p>
                 
                 <div class="experience-grid">
@@ -1628,8 +1582,8 @@
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div>
-                            <h4>Market Expert</h4>
-                            <p>Deep knowledge of Nashville area</p>
+                            <h4 data-en="Tax Expert" data-ar="خبير ضرائب">Tax Expert</h4>
+                            <p data-en="Comprehensive tax planning & preparation" data-ar="تخطيط وإعداد ضريبي شامل">Comprehensive tax planning & preparation</p>
                         </div>
                     </div>
                     <div class="experience-card">
@@ -1637,8 +1591,8 @@
                             <i class="fas fa-handshake"></i>
                         </div>
                         <div>
-                            <h4>Client Focused</h4>
-                            <p>Your success is my priority</p>
+                            <h4 data-en="Client Focused" data-ar="محور العميل">Client Focused</h4>
+                            <p data-en="Your financial success is our priority" data-ar="نجاحك المالي هو أولويتنا">Your financial success is our priority</p>
                         </div>
                     </div>
                     <div class="experience-card">
@@ -1646,17 +1600,17 @@
                             <i class="fas fa-award"></i>
                         </div>
                         <div>
-                            <h4>Proven Results</h4>
-                            <p>70+ successful transactions</p>
+                            <h4 data-en="Proven Results" data-ar="نتائج مثبتة">Proven Results</h4>
+                            <p data-en="2000+ tax returns filed successfully" data-ar="أكثر من 2000 إقرار ضريبي مقدم بنجاح">2000+ tax returns filed successfully</p>
                         </div>
                     </div>
                     <div class="experience-card">
                         <div class="experience-icon">
-                            <i class="fas fa-key"></i>
+                            <i class="fas fa-calculator"></i>
                         </div>
                         <div>
-                            <h4>Full Service</h4>
-                            <p>From search to closing</p>
+                            <h4 data-en="Full Service" data-ar="خدمة شاملة">Full Service</h4>
+                            <p data-en="Tax, payroll & bookkeeping solutions" data-ar="حلول الضرائب والرواتب ومسك الدفاتر">Tax, payroll & bookkeeping solutions</p>
                         </div>
                     </div>
                 </div>
@@ -1667,138 +1621,599 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-header">
-            <p class="section-subtitle" data-en="WHAT I OFFER" data-ar="ما أقدمه">WHAT I OFFER</p>
-            <h2 class="section-title" data-en="Premium Real Estate Services" data-ar="خدمات العقارات المتميزة">
-                Premium Real Estate Services
+            <p class="section-subtitle" data-en="OUR SERVICES" data-ar="خدماتنا">OUR SERVICES</p>
+            <h2 class="section-title" data-en="Professional Financial Services" data-ar="خدمات مالية محترفة">
+                Professional Financial Services
             </h2>
         </div>
-        
+
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-calculator"></i>
                 </div>
-                <h3 data-en="Residential Sales" data-ar="مبيعات سكنية">Residential Sales</h3>
-                <p data-en="Expert guidance in buying and selling homes, from starter properties to luxury estates in Nashville's finest neighborhoods."
-                   data-ar="إرشادات الخبراء في شراء وبيع المنازل، من العقارات المبتدئة إلى العقارات الفاخرة في أرقى أحياء ناشفيل.">
-                    Expert guidance in buying and selling homes, from starter properties to luxury estates in Nashville's finest neighborhoods.
+                <h3 data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</h3>
+                <p data-en="Comprehensive tax preparation, planning, and consulting for individuals and businesses. Maximize your refunds and minimize your tax liability."
+                   data-ar="إعداد الضرائب الشامل والتخطيط والاستشارة للأفراد والشركات.">
+                    Comprehensive tax preparation, planning, and consulting for individuals and businesses. Maximize your refunds and minimize your tax liability.
                 </p>
             </div>
-            
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</h3>
+                <p data-en="Complete payroll management including processing, tax withholdings, direct deposits, and compliance with federal and state regulations."
+                   data-ar="إدارة كاملة للرواتب تشمل المعالجة واستقطاع الضرائب والودائع المباشرة.">
+                    Complete payroll management including processing, tax withholdings, direct deposits, and compliance with federal and state regulations.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</h3>
+                <p data-en="Professional bookkeeping services to keep your financial records organized and up-to-date. Monthly reconciliations and financial reporting."
+                   data-ar="خدمات مسك الدفاتر المحترفة للحفاظ على سجلاتك المالية منظمة ومحدثة.">
+                    Professional bookkeeping services to keep your financial records organized and up-to-date. Monthly reconciliations and financial reporting.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</h3>
+                <p data-en="Strategic financial planning and budgeting services to help you achieve your personal and business financial goals."
+                   data-ar="خدمات التخطيط المالي الاستراتيجي والميزانية لمساعدتك في تحقيق أهدافك المالية.">
+                    Strategic financial planning and budgeting services to help you achieve your personal and business financial goals.
+                </p>
+            </div>
+
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-building"></i>
                 </div>
-                <h3 data-en="Commercial Leasing" data-ar="التأجير التجاري">Commercial Leasing</h3>
-                <p data-en="Prime commercial spaces available in Poplasa, Antioch TN. Perfect for retail, offices, or entrepreneurial ventures."
-                   data-ar="مساحات تجارية ممتازة متاحة في بوبلاسا، أنطاكية تينيسي. مثالية للبيع بالتجزئة أو المكاتب أو المشاريع الريادية.">
-                    Prime commercial spaces available in Poplasa, Antioch TN. Perfect for retail, offices, or entrepreneurial ventures.
+                <h3 data-en="Business Consulting" data-ar="استشارات الأعمال">Business Consulting</h3>
+                <p data-en="Expert business consulting services including entity formation, financial analysis, and growth strategies for small businesses."
+                   data-ar="خدمات استشارات الأعمال الخبيرة بما في ذلك تكوين الكيانات والتحليل المالي.">
+                    Expert business consulting services including entity formation, financial analysis, and growth strategies for small businesses.
                 </p>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-chart-area"></i>
-                </div>
-                <h3 data-en="Investment Consulting" data-ar="استشارات الاستثمار">Investment Consulting</h3>
-                <p data-en="Strategic advice on real estate investments, market analysis, and portfolio optimization for maximum returns."
-                   data-ar="نصائح استراتيجية حول الاستثمارات العقارية وتحليل السوق وتحسين المحفظة لتحقيق أقصى عوائد.">
-                    Strategic advice on real estate investments, market analysis, and portfolio optimization for maximum returns.
-                </p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <h3 data-en="Property Management" data-ar="إدارة الممتلكات">Property Management</h3>
-                <p data-en="Comprehensive management services for rental properties, ensuring optimal performance and tenant satisfaction."
-                   data-ar="خدمات إدارة شاملة للعقارات المؤجرة، مما يضمن الأداء الأمثل ورضا المستأجرين.">
-                    Comprehensive management services for rental properties, ensuring optimal performance and tenant satisfaction.
-                </p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-search-location"></i>
-                </div>
-                <h3 data-en="Market Analysis" data-ar="تحليل السوق">Market Analysis</h3>
-                <p data-en="In-depth market research and property valuations to help you make informed real estate decisions."
-                   data-ar="أبحاث سوقية متعمقة وتقييمات عقارية لمساعدتك في اتخاذ قرارات عقارية مستنيرة.">
-                    In-depth market research and property valuations to help you make informed real estate decisions.
-                </p>
-            </div>
-            
+
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-user-shield"></i>
                 </div>
-                <h3 data-en="Client Support" data-ar="دعم العملاء">Client Support</h3>
-                <p data-en="Personalized support throughout your real estate journey, from initial consultation to successful closing."
-                   data-ar="دعم شخصي طوال رحلتك العقارية، من الاستشارة الأولية إلى الإغلاق الناجح.">
-                    Personalized support throughout your real estate journey, from initial consultation to successful closing.
+                <h3 data-en="IRS Representation" data-ar="تمثيل ضريبي">IRS Representation</h3>
+                <p data-en="Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business."
+                   data-ar="تمثيل مهني لمراجعات مصلحة الضرائب والطعون وخدمات حل الضرائب.">
+                    Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Properties Section -->
-    <section class="properties" id="properties">
+    <!-- Tax Services Gallery Section -->
+    <section class="services" id="tax-gallery">
         <div class="section-header">
-            <p class="section-subtitle" data-en="FEATURED LISTINGS" data-ar="القوائم المميزة">FEATURED LISTINGS</p>
-            <h2 class="section-title" data-en="Premium Properties Available" data-ar="العقارات المتميزة المتاحة">
-                Premium Properties Available
+            <p class="section-subtitle" data-en="OUR EXPERTISE" data-ar="خبرتنا">OUR EXPERTISE</p>
+            <h2 class="section-title" data-en="Tax Services & Resources" data-ar="الخدمات الضريبية والموارد">
+                Tax Services & Resources
             </h2>
         </div>
-        
-        <div class="property-filter">
-            <button class="filter-btn active" onclick="filterProperties('all')">All</button>
-            <button class="filter-btn" onclick="filterProperties('residential')">Residential</button>
-            <button class="filter-btn" onclick="filterProperties('commercial')">Commercial</button>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="Ad.jpg" alt="Universal Financial LLC Advertisement" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="service-content" style="padding: 1.5rem;">
+                    <h3 data-en="Professional Services" data-ar="خدمات محترفة">Professional Services</h3>
+                    <p data-en="Comprehensive financial services tailored to your needs. From tax preparation to ongoing bookkeeping support." data-ar="خدمات مالية شاملة مصممة خصيصاً لاحتياجاتك. من إعداد الضرائب إلى دعم مسك الدفاتر المستمر.">Comprehensive financial services tailored to your needs. From tax preparation to ongoing bookkeeping support.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="Property_Taxes.jpg" alt="Property Tax Services" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="service-content" style="padding: 1.5rem;">
+                    <h3 data-en="Property Tax Expertise" data-ar="خبرة ضرائب العقارات">Property Tax Expertise</h3>
+                    <p data-en="Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes." data-ar="معرفة متخصصة في شؤون ضرائب العقارات والتقييمات والاستئنافات لمساعدتك في توفير المال على ضرائب عقاراتك.">Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="deducting-property-taxes.jpg" alt="Tax Deduction Services" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="service-content" style="padding: 1.5rem;">
+                    <h3 data-en="Deduction Optimization" data-ar="تحسين الخصومات">Deduction Optimization</h3>
+                    <p data-en="Expert guidance on maximizing your tax deductions, including property taxes, business expenses, and more." data-ar="إرشادات الخبراء حول تعظيم الخصومات الضريبية، بما في ذلك ضرائب العقارات ومصاريف الأعمال وأكثر.">Expert guidance on maximizing your tax deductions, including property taxes, business expenses, and more.</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="properties-container" id="propertiesContainer">
-            <!-- Residential Properties -->
-            <div class="property-card" data-category="residential">
-                <div class="property-image">
-                    <span class="property-badge">New Listing</span>
-                    <i class="fas fa-home" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
+
+        <!-- External Links Section -->
+        <div class="external-links" style="text-align: center; margin-top: 3rem;">
+            <h3 style="margin-bottom: 2rem; color: var(--accent);" data-en="Connect With John Gobran" data-ar="تواصل مع جون جبران">Connect With John Gobran</h3>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-home"></i>
+                    <span data-en="Real Estate Profile" data-ar="ملف العقارات">Real Estate Profile</span>
+                </a>
+                <a href="https://www.facebook.com/p/John-Gobran-Realtor-100057052945814/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-facebook"></i>
+                    <span data-en="Facebook Page" data-ar="صفحة فيسبوك">Facebook Page</span>
+                </a>
+                <a href="https://www.linkedin.com/in/john-gobran-19248287/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i>
+                    <span data-en="LinkedIn Profile" data-ar="ملف لينكدإن">LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <p class="section-subtitle" data-en="GET IN TOUCH" data-ar="تواصل معنا">GET IN TOUCH</p>
+            <h2 class="section-title" data-en="Ready to Work Together?" data-ar="جاهز للعمل معاً؟">
+                Ready to Work Together?
+            </h2>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 data-en="Let's Connect" data-ar="دعنا نتواصل">Let's Connect</h3>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4 data-en="Phone" data-ar="هاتف">Phone</h4>
+                        <p class="phone-number">(615) 585-6523</p>
+                    </div>
                 </div>
-                <div class="property-content">
-                    <h3>Modern Family Home</h3>
-                    <div class="property-price">$450,000</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-bed"></i> 4 Beds</span>
-                        <span><i class="fas fa-bath"></i> 3 Baths</span>
-                        <span><i class="fas fa-expand"></i> 2,800 sqft</span>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4 data-en="Email" data-ar="بريد إلكتروني">Email</h4>
+                        <p class="email-address">john_asham@yahoo.com</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4 data-en="Office" data-ar="مكتب">Office</h4>
+                        <p>2711 Murfreesboro Pike<br>Antioch, TN 37013</p>
+                    </div>
+                </div>
+
+                <div class="office-hours">
+                    <h4 data-en="Office Hours" data-ar="ساعات العمل">Office Hours</h4>
+                    <div class="hours-grid">
+                        <div class="hours-item">
+                            <span data-en="Monday - Friday" data-ar="الاثنين - الجمعة">Monday - Friday</span>
+                            <span data-en="8:00 AM - 8:00 PM" data-ar="8:00 ص - 8:00 م">8:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span data-en="Saturday" data-ar="السبت">Saturday</span>
+                            <span data-en="By Appointment" data-ar="بموعد">By Appointment</span>
+                        </div>
+                        <div class="hours-item">
+                            <span data-en="Sunday" data-ar="الأحد">Sunday</span>
+                            <span data-en="By Appointment" data-ar="بموعد">By Appointment</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="property-card" data-category="residential">
-                <div class="property-image">
-                    <span class="property-badge">Hot Deal</span>
-                    <i class="fas fa-city" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
-                </div>
-                <div class="property-content">
-                    <h3>Luxury Townhouse</h3>
-                    <div class="property-price">$680,000</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-bed"></i> 3 Beds</span>
-                        <span><i class="fas fa-bath"></i> 2.5 Baths</span>
-                        <span><i class="fas fa-expand"></i> 2,200 sqft</span>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" id="contactForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+                    <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="to" value="john_asham@yahoo.com">
+                    <h3 data-en="Send Message" data-ar="إرسال رسالة">Send Message</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName" data-en="First Name" data-ar="الاسم الأول">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" data-en="Last Name" data-ar="الاسم الأخير">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <label for="email" data-en="Email Address" data-ar="عنوان البريد الإلكتروني">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest" data-en="I'm Interested In" data-ar="أهتم ب">I'm Interested In</label>
+                        <select id="interest" name="interest" required>
+                            <option value="" data-en="Select Service" data-ar="اختر الخدمة">Select Service</option>
+                            <option value="tax-prep" data-en="Tax Preparation" data-ar="إعداد الضرائب">Tax Preparation</option>
+                            <option value="payroll" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</option>
+                            <option value="bookkeeping" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</option>
+                            <option value="planning" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</option>
+                            <option value="business" data-en="Business Consulting" data-ar="استشارات الأعمال">Business Consulting</option>
+                            <option value="consultation" data-en="General Consultation" data-ar="استشارة عامة">General Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your financial service needs..." data-en-placeholder="Tell me about your financial service needs..." data-ar-placeholder="أخبرني عن احتياجاتك للخدمات المالية..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-en="Send Message" data-ar="إرسال رسالة">Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-en="Universal Financial LLC" data-ar="يونيفيرسال فاينانشيال">Universal Financial LLC</h3>
+                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك الموثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من ال��برة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/p/John-Gobran-Realtor-100057052945814/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="social-link"><i class="fas fa-home"></i></a>
+                    <a href="https://www.linkedin.com/in/john-gobran-19248287/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            
-            <div class="property-card" data-category="residential">
-                <div class="property-image">
-                    <span class="property-badge">Premium</span>
-                    <i class="fas fa-building" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
+
+            <div class="footer-section">
+                <h3 data-en="Services" data-ar="الخدمات">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services" data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</a></li>
+                    <li><a href="#services" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</a></li>
+                    <li><a href="#services" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</a></li>
+                    <li><a href="#services" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</a></li>
+                    <li><a href="#services" data-en="Business Consulting" data-ar="استشارات الأعمال">Business Consulting</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-en="Areas Served" data-ar="المناطق المخدومة">Areas Served</h3>
+                <ul class="footer-links">
+                    <li><a href="#" data-en="Antioch" data-ar="أنطاكية">Antioch</a></li>
+                    <li><a href="#" data-en="Nashville" data-ar="ناشفيل">Nashville</a></li>
+                    <li><a href="#" data-en="Mount Juliet" data-ar="ماونت جولييت">Mount Juliet</a></li>
+                    <li><a href="#" data-en="Murfreesboro" data-ar="مرفريسبورو">Murfreesboro</a></li>
+                    <li><a href="#" data-en="Middle Tennessee" data-ar="وسط تينيسي">Middle Tennessee</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h3>
+                <p><i class="fas fa-phone"></i> <span class="phone-number">(615) 585-6523</span></p>
+                <p><i class="fas fa-envelope"></i> <span class="email-address">john_asham@yahoo.com</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> 2711 Murfreesboro Pike, Antioch, TN 37013</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Universal Financial LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-en="Book Consultation" data-ar="حجز استشارة">Book Consultation</h2>
+                <button class="close-modal" onclick="closeBookingModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="bookingForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="bookingFirstName" data-en="First Name" data-ar="الاسم الأول">First Name</label>
+                        <input type="text" id="bookingFirstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingLastName" data-en="Last Name" data-ar="الاسم الأخير">Last Name</label>
+                        <input type="text" id="bookingLastName" required>
+                    </div>
                 </div>
-                <div class="property-content">
-                    <h3>Executive Estate</h3>
-                    <div class="property-price">$1,200,000</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-bed"></i> 5 Beds</span>
-                        <span><i class="fas fa-bath"></i> 4 Baths
+                <div class="form-group">
+                    <label for="bookingEmail" data-en="Email" data-ar="بريد إلكتروني">Email</label>
+                    <input type="email" id="bookingEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingPhone" data-en="Phone" data-ar="هاتف">Phone</label>
+                    <input type="tel" id="bookingPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingDate" data-en="Preferred Date" data-ar="التاريخ المفضل">Preferred Date</label>
+                    <input type="date" id="bookingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوقت المفضل">Preferred Time</label>
+                    <select id="bookingTime" required>
+                        <option value="">Select Time</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="bookingMessage">Message</label>
+                    <textarea id="bookingMessage" placeholder="Tell me about your consultation needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Consultation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Global variables
+        let currentLanguage = 'en';
+        let particles = [];
+        let animationId;
+
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Custom Cursor - Removed for performance
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = progress + '%';
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTop > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animated numbers
+        function animateNumbers() {
+            const numbers = document.querySelectorAll('.stat-number[data-count]');
+            numbers.forEach(number => {
+                const target = parseInt(number.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    number.textContent = Math.floor(current);
+                }, 20);
+            });
+        }
+
+        // Hero title - Simplified
+        function setHeroTitle() {
+            const heroTitle = document.getElementById('heroTitle');
+            heroTitle.textContent = "Your Financial Services Expert";
+        }
+
+        // Particles animation - Removed for performance
+
+        // Property filtering
+        function filterProperties(category) {
+            const cards = document.querySelectorAll('.property-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Language toggle
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+            document.body.setAttribute('dir', currentLanguage === 'ar' ? 'rtl' : 'ltr');
+
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            elements.forEach(el => {
+                el.textContent = el.getAttribute('data-' + currentLanguage);
+            });
+
+            // Handle placeholders
+            const placeholderElements = document.querySelectorAll('[data-en-placeholder][data-ar-placeholder]');
+            placeholderElements.forEach(el => {
+                const placeholder = currentLanguage === 'en' ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-ar-placeholder');
+                el.setAttribute('placeholder', placeholder);
+            });
+
+            // Handle select options
+            const selectOptions = document.querySelectorAll('option[data-en][data-ar]');
+            selectOptions.forEach(option => {
+                option.textContent = option.getAttribute('data-' + currentLanguage);
+            });
+
+            const langButton = document.querySelector('.lang-toggle');
+            langButton.textContent = currentLanguage === 'en' ? 'العربية' : 'English';
+        }
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Booking modal
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Try Netlify form submission first
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            }).catch(error => {
+                // Fallback to mailto
+                const subject = `Financial Services Inquiry from ${data.firstName} ${data.lastName}`;
+                const body = `Name: ${data.firstName} ${data.lastName}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Interest: ${data.interest}
+
+Message:
+${data.message}
+
+Please reply to: ${data.email}`;
+
+                const mailtoLink = `mailto:john_asham@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoLink;
+                alert('Opening your email client. Please send the message to complete your inquiry.');
+            });
+        });
+
+        // Booking form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('bookingFirstName').value;
+            const lastName = document.getElementById('bookingLastName').value;
+            const email = document.getElementById('bookingEmail').value;
+            const phone = document.getElementById('bookingPhone').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const message = document.getElementById('bookingMessage').value;
+
+            const subject = `Consultation Booking Request - ${firstName} ${lastName}`;
+            const body = `Consultation Booking Details:
+
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone}
+Preferred Date: ${date}
+Preferred Time: ${time}
+
+Message:
+${message}`;
+
+            const mailtoLink = `mailto:john_asham@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+
+            closeBookingModal();
+            this.reset();
+            alert('Thank you for booking! Your email client should open now with the consultation request.');
+        });
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            setHeroTitle();
+            setTimeout(animateNumbers, 1000);
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBookingModal();
+            }
+        });
+    </script>
+</body>
+</html>

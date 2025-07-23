@@ -1,0 +1,17 @@
+{
+  "name": "john-gobran-real-estate",
+  "version": "1.0.0",
+  "description": "John Gobran Real Estate Website - Professional real estate agent in Nashville, TN",
+  "main": "Index.html",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["real-estate", "nashville", "property", "agent"],
+  "author": "John Gobran",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
