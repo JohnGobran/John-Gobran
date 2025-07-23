@@ -2132,7 +2132,7 @@
                         </div>
                         <div>
                             <h4 data-en="Client Focused" data-ar="محور العميل">Client Focused</h4>
-                            <p data-en="Your financial success is our priority" data-ar="نجاح�� المالي هو أولويتنا">Your financial success is our priority</p>
+                            <p data-en="Your financial success is our priority" data-ar="نجاحك المالي هو أولويتنا">Your financial success is our priority</p>
                         </div>
                     </div>
                     <div class="experience-card">
@@ -2413,7 +2413,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3 data-en="Universal Financial LLC" data-ar="يونيفيرسال فاينانشيال">Universal Financial LLC</h3>
-                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك ا��موثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من البرة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
+                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك الموثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من البرة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/John-Gobran-Realtor-100057052945814/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="social-link"><i class="fas fa-home"></i></a>
@@ -2425,7 +2425,7 @@
                 <h3 data-en="Services" data-ar="الخدمات">Services</h3>
                 <ul class="footer-links">
                     <li><a href="#services" data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</a></li>
-                    <li><a href="#services" data-en="Payroll Services" data-ar="خدما�� الرواتب">Payroll Services</a></li>
+                    <li><a href="#services" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</a></li>
                     <li><a href="#services" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</a></li>
                     <li><a href="#services" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</a></li>
                     <li><a href="#services" data-en="Business Consulting" data-ar="استشارات الأعمال">Business Consulting</a></li>
@@ -2489,7 +2489,7 @@
                     <input type="date" id="bookingDate" required>
                 </div>
                 <div class="form-group">
-                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوق�� المفضل">Preferred Time</label>
+                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوقت المفضل">Preferred Time</label>
                     <select id="bookingTime" required>
                         <option value="">Select Time</option>
                         <option value="9:00 AM">9:00 AM</option>
@@ -2840,9 +2840,41 @@ Please reply to: ${data.email}`;
             }
         });
 
+        // Show message in booking modal
+        function showBookingMessage(message, isSuccess = true) {
+            const existingMessage = document.querySelector('.booking-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `booking-message ${isSuccess ? 'success' : 'error'}`;
+            messageDiv.style.cssText = `
+                padding: 1rem;
+                margin: 1rem 0;
+                border-radius: 8px;
+                text-align: center;
+                font-weight: 500;
+                background: ${isSuccess ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)'};
+                border: 1px solid ${isSuccess ? 'rgba(34, 197, 94, 0.3)' : 'rgba(239, 68, 68, 0.3)'};
+                color: ${isSuccess ? '#22c55e' : '#ef4444'};
+                animation: slideIn 0.3s ease-out;
+            `;
+            messageDiv.textContent = message;
+
+            const form = document.getElementById('bookingForm');
+            form.insertBefore(messageDiv, form.firstChild);
+        }
+
         // Booking form submission
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
+            submitBtn.disabled = true;
 
             const firstName = document.getElementById('bookingFirstName').value;
             const lastName = document.getElementById('bookingLastName').value;
@@ -2865,11 +2897,22 @@ Message:
 ${message}`;
 
             const mailtoLink = `mailto:john_asham@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
 
-            closeBookingModal();
-            this.reset();
-            alert('Thank you for booking! Your email client should open now with the consultation request.');
+            // Open email client
+            window.open(mailtoLink, '_blank');
+
+            // Show success message
+            showBookingMessage('Your email client should open with the booking request. Please send it to confirm your consultation.');
+
+            // Reset form and close modal after short delay
+            setTimeout(() => {
+                this.reset();
+                closeBookingModal();
+            }, 3000);
+
+            // Reset button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         });
 
         // Close mobile menu when clicking navigation links
