@@ -1891,6 +1891,22 @@
             outline: none;
         }
 
+        /* Form message animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-message {
+            transition: opacity 0.3s ease;
+        }
+
         /* RTL Styles */
         body[dir="rtl"] {
             text-align: right;
@@ -2116,7 +2132,7 @@
                         </div>
                         <div>
                             <h4 data-en="Client Focused" data-ar="محور العميل">Client Focused</h4>
-                            <p data-en="Your financial success is our priority" data-ar="نجاحك المالي هو أولويتنا">Your financial success is our priority</p>
+                            <p data-en="Your financial success is our priority" data-ar="نجاح�� المالي هو أولويتنا">Your financial success is our priority</p>
                         </div>
                     </div>
                     <div class="experience-card">
@@ -2158,7 +2174,7 @@
                 </div>
                 <h3 data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</h3>
                 <p data-en="Comprehensive tax preparation, planning, and consulting for individuals and businesses. Maximize your refunds and minimize your tax liability."
-                   data-ar="إعداد الضرائب الشامل والتخط��ط والاستشارة للأفراد والشركات.">
+                   data-ar="إعداد الضرائب الشامل والتخطيط والاستشارة للأفراد والشركات.">
                     Comprehensive tax preparation, planning, and consulting for individuals and businesses. Maximize your refunds and minimize your tax liability.
                 </p>
             </div>
@@ -2213,7 +2229,7 @@
                 </div>
                 <h3 data-en="IRS Representation" data-ar="تمثيل ضريبي">IRS Representation</h3>
                 <p data-en="Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business."
-                   data-ar="تمثيل مهني لمراجعات مصلحة الضرائب والطعو�� وخدمات حل الضرائب.">
+                   data-ar="تمثيل مهني لمراجعات مصلحة الضرائب والطعون وخدمات حل الضرائب.">
                     Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business.
                 </p>
             </div>
@@ -2397,7 +2413,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3 data-en="Universal Financial LLC" data-ar="يونيفيرسال فاينانشيال">Universal Financial LLC</h3>
-                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك الموثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من البرة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
+                <p data-en="Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise." data-ar="شريكك ا��موثوق في الخدمات المالية. متخصص في إعداد الضرائب والرواتب ومسك الدفاتر مع أكثر من 10 سنوات من البرة المثبتة.">Your trusted partner in financial services. Specializing in tax preparation, payroll, and bookkeeping with over 10 years of proven expertise.</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/p/John-Gobran-Realtor-100057052945814/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="social-link"><i class="fas fa-home"></i></a>
@@ -2409,7 +2425,7 @@
                 <h3 data-en="Services" data-ar="الخدمات">Services</h3>
                 <ul class="footer-links">
                     <li><a href="#services" data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</a></li>
-                    <li><a href="#services" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</a></li>
+                    <li><a href="#services" data-en="Payroll Services" data-ar="خدما�� الرواتب">Payroll Services</a></li>
                     <li><a href="#services" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</a></li>
                     <li><a href="#services" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</a></li>
                     <li><a href="#services" data-en="Business Consulting" data-ar="استشارات الأعمال">Business Consulting</a></li>
@@ -2473,7 +2489,7 @@
                     <input type="date" id="bookingDate" required>
                 </div>
                 <div class="form-group">
-                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوقت المفضل">Preferred Time</label>
+                    <label for="bookingTime" data-en="Preferred Time" data-ar="الوق�� المفضل">Preferred Time</label>
                     <select id="bookingTime" required>
                         <option value="">Select Time</option>
                         <option value="9:00 AM">9:00 AM</option>
