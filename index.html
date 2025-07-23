@@ -1632,7 +1632,7 @@
                 </div>
                 <h3 data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</h3>
                 <p data-en="Professional bookkeeping services to keep your financial records organized and up-to-date. Monthly reconciliations and financial reporting."
-                   data-ar="خدمات مسك الدفاتر المحترفة للحفاظ على سجلاتك المالية ��نظمة ومحدثة.">
+                   data-ar="خدمات مسك الدفاتر المحترفة للحفاظ على سجلاتك المالية منظمة ومحدثة.">
                     Professional bookkeeping services to keep your financial records organized and up-to-date. Monthly reconciliations and financial reporting.
                 </p>
             </div>
@@ -1672,102 +1672,59 @@
         </div>
     </section>
 
-    <!-- Properties Section -->
-    <section class="properties" id="properties">
+    <!-- Tax Services Gallery Section -->
+    <section class="services" id="tax-gallery">
         <div class="section-header">
-            <p class="section-subtitle" data-en="FEATURED LISTINGS" data-ar="القوائم المميزة">FEATURED LISTINGS</p>
-            <h2 class="section-title" data-en="Premium Properties Available" data-ar="العقارات المتميزة المتاحة">
-                Premium Properties Available
+            <p class="section-subtitle" data-en="OUR EXPERTISE" data-ar="خبرتنا">OUR EXPERTISE</p>
+            <h2 class="section-title" data-en="Tax Services & Resources" data-ar="الخدمات الضريبية والموارد">
+                Tax Services & Resources
             </h2>
         </div>
-        
-        <div class="property-filter">
-            <button class="filter-btn active" onclick="filterProperties('all')">All</button>
-            <button class="filter-btn" onclick="filterProperties('residential')">Residential</button>
-            <button class="filter-btn" onclick="filterProperties('commercial')">Commercial</button>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="Ad.jpg" alt="Universal Financial LLC Advertisement" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="service-content" style="padding: 1.5rem;">
+                    <h3>Professional Services</h3>
+                    <p>Comprehensive financial services tailored to your needs. From tax preparation to ongoing bookkeeping support.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="Property_Taxes.jpg" alt="Property Tax Services" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="service-content" style="padding: 1.5rem;">
+                    <h3>Property Tax Expertise</h3>
+                    <p>Specialized knowledge in property tax matters, assessments, and appeals to help you save money on your property taxes.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="deducting-property-taxes.jpg" alt="Tax Deduction Services" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                </div>
+                <div class="service-content" style="padding: 1.5rem;">
+                    <h3>Deduction Optimization</h3>
+                    <p>Expert guidance on maximizing your tax deductions, including property taxes, business expenses, and more.</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="properties-container" id="propertiesContainer">
-            <!-- Residential Properties -->
-            <div class="property-card" data-category="residential">
-                <div class="property-image">
-                    <span class="property-badge">New Listing</span>
-                    <i class="fas fa-home" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
-                </div>
-                <div class="property-content">
-                    <h3>Modern Family Home</h3>
-                    <div class="property-price">$450,000</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-bed"></i> 4 Beds</span>
-                        <span><i class="fas fa-bath"></i> 3 Baths</span>
-                        <span><i class="fas fa-expand"></i> 2,800 sqft</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="property-card" data-category="residential">
-                <div class="property-image">
-                    <span class="property-badge">Hot Deal</span>
-                    <i class="fas fa-city" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
-                </div>
-                <div class="property-content">
-                    <h3>Luxury Townhouse</h3>
-                    <div class="property-price">$680,000</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-bed"></i> 3 Beds</span>
-                        <span><i class="fas fa-bath"></i> 2.5 Baths</span>
-                        <span><i class="fas fa-expand"></i> 2,200 sqft</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="property-card" data-category="residential">
-                <div class="property-image">
-                    <span class="property-badge">Premium</span>
-                    <i class="fas fa-building" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
-                </div>
-                <div class="property-content">
-                    <h3>Executive Estate</h3>
-                    <div class="property-price">$1,200,000</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-bed"></i> 5 Beds</span>
-                        <span><i class="fas fa-bath"></i> 4 Baths</span>
-                        <span><i class="fas fa-expand"></i> 4,500 sqft</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Commercial Properties -->
-            <div class="property-card" data-category="commercial">
-                <div class="property-image">
-                    <span class="property-badge">Available</span>
-                    <i class="fas fa-store" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
-                </div>
-                <div class="property-content">
-                    <h3>Retail Space - Poplasa</h3>
-                    <div class="property-price">$3,500/mo</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-expand"></i> 2,000 sqft</span>
-                        <span><i class="fas fa-car"></i> Parking</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Antioch TN</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="property-card" data-category="commercial">
-                <div class="property-image">
-                    <span class="property-badge">Prime Location</span>
-                    <i class="fas fa-briefcase" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; color: white; z-index: 1;"></i>
-                </div>
-                <div class="property-content">
-                    <h3>Office Suite - Poplasa</h3>
-                    <div class="property-price">$2,800/mo</div>
-                    <div class="property-features">
-                        <span><i class="fas fa-expand"></i> 1,500 sqft</span>
-                        <span><i class="fas fa-wifi"></i> High-Speed Internet</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Antioch TN</span>
-                    </div>
-                </div>
+        <!-- External Links Section -->
+        <div class="external-links" style="text-align: center; margin-top: 3rem;">
+            <h3 style="margin-bottom: 2rem; color: var(--accent);">Connect With John Gobran</h3>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-home"></i>
+                    View Real Estate Profile
+                </a>
+                <a href="https://www.facebook.com/p/John-Gobran-Realtor-100057052945814/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-facebook"></i>
+                    Facebook Page
+                </a>
             </div>
         </div>
     </section>
