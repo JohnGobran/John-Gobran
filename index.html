@@ -1654,7 +1654,7 @@
                 </div>
                 <h3 data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</h3>
                 <p data-en="Strategic financial planning and budgeting services to help you achieve your personal and business financial goals."
-                   data-ar="خدمات التخطيط المالي ال��ستراتيجي والميزانية لمساعدتك في تحقيق أهدافك المالية.">
+                   data-ar="خدمات التخطيط المالي الاستراتيجي والميزانية لمساعدتك في تحقيق أهدافك المالية.">
                     Strategic financial planning and budgeting services to help you achieve your personal and business financial goals.
                 </p>
             </div>
@@ -1674,7 +1674,7 @@
                 <div class="service-icon">
                     <i class="fas fa-user-shield"></i>
                 </div>
-                <h3 data-en="IRS Representation" data-ar="تمثيل ضري��ي">IRS Representation</h3>
+                <h3 data-en="IRS Representation" data-ar="تمثيل ضريبي">IRS Representation</h3>
                 <p data-en="Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business."
                    data-ar="تمثيل مهني لمراجعات مصلحة الضرائب والطعون وخدمات حل الضرائب.">
                     Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business.
@@ -1803,7 +1803,10 @@
             </div>
 
             <div class="contact-form-wrapper">
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+                    <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="to" value="john_asham@yahoo.com">
                     <h3>Send Message</h3>
                     <div class="form-grid">
                         <div class="form-group">
