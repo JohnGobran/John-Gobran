@@ -696,12 +696,33 @@
             gap: 1rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .experience-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent);
             box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+        }
+
+        .experience-card:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Touch device optimizations for experience cards */
+        @media (hover: none) and (pointer: coarse) {
+            .experience-card:hover {
+                transform: none;
+                border-color: var(--glass-border);
+                box-shadow: none;
+            }
+
+            .experience-card:active {
+                transform: scale(0.96);
+                border-color: var(--accent);
+                transition-duration: 0.1s;
+            }
         }
 
         .experience-icon {
@@ -2303,7 +2324,7 @@
             <div class="footer-section">
                 <h3 data-en="Services" data-ar="الخدمات">Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#services" data-en="Tax Services" data-ar="ال��دمات الضريبية">Tax Services</a></li>
+                    <li><a href="#services" data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</a></li>
                     <li><a href="#services" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</a></li>
                     <li><a href="#services" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</a></li>
                     <li><a href="#services" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</a></li>
