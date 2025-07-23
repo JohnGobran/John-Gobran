@@ -1201,6 +1201,18 @@
         /* Custom select wrapper for better control */
         .select-wrapper {
             position: relative;
+            display: block;
+            width: 100%;
+        }
+
+        .select-wrapper select {
+            width: 100%;
+            padding-right: 3rem !important;
+        }
+
+        /* Remove the background image when using wrapper */
+        .select-wrapper select {
+            background-image: none !important;
         }
 
         .select-wrapper::after {
@@ -1211,10 +1223,17 @@
             transform: translateY(-50%);
             width: 0;
             height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid var(--white);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid var(--white);
             pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Ensure dropdown arrow is visible on focus */
+        .select-wrapper select:focus + .select-wrapper::after,
+        .select-wrapper select:focus ~ .select-wrapper::after {
+            border-top-color: var(--accent);
         }
 
         .form-group input:focus,
@@ -2126,7 +2145,7 @@
                 </button>
                 <a href="#services" class="btn btn-secondary">
                     <i class="fas fa-calculator"></i>
-                    <span data-en="View Services" data-ar="عرض الخدمات">View Services</span>
+                    <span data-en="View Services" data-ar="عر�� الخدمات">View Services</span>
                 </a>
             </div>
         </div>
@@ -2165,7 +2184,7 @@
                     With over 10 years of dedicated experience in financial services, Universal Financial LLC has built a reputation for exceptional service and outstanding results. We specialize in comprehensive tax services, payroll management, and professional bookkeeping for individuals and businesses throughout Middle Tennessee.
                 </p>
                 <p data-en="Located in the heart of Antioch, TN, we provide personalized financial solutions that help our clients maximize their financial potential. From tax preparation and planning to ongoing bookkeeping support, we're here to simplify your financial life."
-                   data-ar="موجودون في ق��ب أنطاكية، تينيسي">
+                   data-ar="موجودون في قلب أنطاكية، تينيسي">
                     Located in the heart of Antioch, TN, we provide personalized financial solutions that help our clients maximize their financial potential. From tax preparation and planning to ongoing bookkeeping support, we're here to simplify your financial life.
                 </p>
                 
@@ -2305,7 +2324,7 @@
                 </div>
                 <div class="service-content" style="padding: 1.5rem;">
                     <h3 data-en="Professional Services" data-ar="خدمات محترفة">Professional Services</h3>
-                    <p data-en="Comprehensive financial services tailored to your needs. From tax preparation to ongoing bookkeeping support." data-ar="خدمات مالية شاملة مصممة خصيصاً لاحتياجا��ك. من إعداد الضرائب إلى دعم مسك الدفاتر المستمر.">Comprehensive financial services tailored to your needs. From tax preparation to ongoing bookkeeping support.</p>
+                    <p data-en="Comprehensive financial services tailored to your needs. From tax preparation to ongoing bookkeeping support." data-ar="خدمات مالية شاملة مصممة خصيصاً لاحتياجاتك. من إعداد الضرائب إلى دعم مسك الدفاتر المستمر.">Comprehensive financial services tailored to your needs. From tax preparation to ongoing bookkeeping support.</p>
                 </div>
             </div>
 
@@ -2354,7 +2373,7 @@
     <section class="contact" id="contact">
         <div class="section-header">
             <p class="section-subtitle" data-en="GET IN TOUCH" data-ar="تواصل معنا">GET IN TOUCH</p>
-            <h2 class="section-title" data-en="Ready to Work Together?" data-ar="جاهز للعمل م��اً؟">
+            <h2 class="section-title" data-en="Ready to Work Together?" data-ar="جاهز للعمل معاً؟">
                 Ready to Work Together?
             </h2>
         </div>
