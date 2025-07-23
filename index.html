@@ -1541,7 +1541,7 @@
                     With over 5 years of dedicated experience in Middle Tennessee's real estate market, I've built a reputation for exceptional service and outstanding results. Having successfully closed over 70 transactions totaling more than $40 million, I bring unparalleled expertise to every client relationship.
                 </p>
                 <p data-en="As a proud owner of commercial properties in Poplasa, Antioch TN, I understand both sides of real estate investment. My properties are currently available for lease to businesses and entrepreneurs looking for prime commercial space."
-                   data-ar="كمالك فخور للعقارات التجارية في بوبلاسا، أنطاكية تينيسي، أفهم جانبي الاستثمار العقاري.">
+                   data-ar="كمالك فخور للعقارات التجارية في بوبلاسا، أنطاكي�� تينيسي، أفهم جانبي الاستثمار العقاري.">
                     As a proud owner of commercial properties in Poplasa, Antioch TN, I understand both sides of real estate investment. My properties are currently available for lease to businesses and entrepreneurs looking for prime commercial space.
                 </p>
                 
@@ -1776,7 +1776,7 @@
 
         <div class="contact-container">
             <div class="contact-info">
-                <h3 data-en="Let's Connect" data-ar="د��نا نتواصل">Let's Connect</h3>
+                <h3 data-en="Let's Connect" data-ar="دعنا نتواصل">Let's Connect</h3>
 
                 <div class="info-card">
                     <div class="info-icon">
@@ -2059,21 +2059,10 @@
             });
         }
 
-        // Hero title animation
-        function animateHeroTitle() {
-            const title = "Your Real Estate Expert";
+        // Hero title - Simplified
+        function setHeroTitle() {
             const heroTitle = document.getElementById('heroTitle');
-            let index = 0;
-
-            function typeWriter() {
-                if (index < title.length) {
-                    heroTitle.innerHTML += '<span class="letter" style="--i:' + index + '">' + title.charAt(index) + '</span>';
-                    index++;
-                    setTimeout(typeWriter, 100);
-                }
-            }
-
-            setTimeout(typeWriter, 1000);
+            heroTitle.textContent = "Your Real Estate Expert";
         }
 
         // Particles animation - Removed for performance
