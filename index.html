@@ -769,6 +769,25 @@
             box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
         }
 
+        .service-card:active {
+            transform: translateY(-5px) scale(0.98);
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .service-card:hover {
+                transform: none;
+                border-color: var(--glass-border);
+                box-shadow: none;
+            }
+
+            .service-card:active {
+                transform: scale(0.95);
+                border-color: var(--accent);
+                transition-duration: 0.1s;
+            }
+        }
+
         .service-icon {
             width: 80px;
             height: 80px;
@@ -2284,7 +2303,7 @@
             <div class="footer-section">
                 <h3 data-en="Services" data-ar="الخدمات">Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#services" data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</a></li>
+                    <li><a href="#services" data-en="Tax Services" data-ar="ال��دمات الضريبية">Tax Services</a></li>
                     <li><a href="#services" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</a></li>
                     <li><a href="#services" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</a></li>
                     <li><a href="#services" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</a></li>
