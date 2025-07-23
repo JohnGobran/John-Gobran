@@ -1987,7 +1987,7 @@
                 </div>
                 <h3 data-en="IRS Representation" data-ar="تمثيل ضريبي">IRS Representation</h3>
                 <p data-en="Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business."
-                   data-ar="تمثيل مهني لمراجعات مصلحة الضرائب والطعون وخدمات حل الضرائب.">
+                   data-ar="تمثيل مهني لمراجعات مصلحة الضرا��ب والطعون وخدمات حل الضرائب.">
                     Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business.
                 </p>
             </div>
@@ -2037,7 +2037,7 @@
 
         <!-- External Links Section -->
         <div class="external-links" style="text-align: center; margin-top: 3rem;">
-            <h3 style="margin-bottom: 2rem; color: var(--accent);" data-en="Connect With John Gobran" data-ar="تواصل مع جون جبران">Connect With John Gobran</h3>
+            <h3 style="margin-bottom: 2rem; color: var(--accent);" data-en="Connect With John Gobran" data-ar="تواصل مع جو�� جبران">Connect With John Gobran</h3>
             <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
                 <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="btn btn-secondary">
                     <i class="fas fa-home"></i>
@@ -2146,7 +2146,7 @@
                         <select id="interest" name="interest" required>
                             <option value="" data-en="Select Service" data-ar="اختر الخدمة">Select Service</option>
                             <option value="tax-prep" data-en="Tax Preparation" data-ar="إعداد الضرائب">Tax Preparation</option>
-                            <option value="payroll" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</option>
+                            <option value="payroll" data-en="Payroll Services" data-ar="خ��مات الرواتب">Payroll Services</option>
                             <option value="bookkeeping" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</option>
                             <option value="planning" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</option>
                             <option value="business" data-en="Business Consulting" data-ar="استشارات الأعمال">Business Consulting</option>
@@ -2191,7 +2191,7 @@
             </div>
 
             <div class="footer-section">
-                <h3 data-en="Areas Served" data-ar="المناطق المخدومة">Areas Served</h3>
+                <h3 data-en="Areas Served" data-ar="ال��ناطق المخدومة">Areas Served</h3>
                 <ul class="footer-links">
                     <li><a href="#" data-en="Antioch" data-ar="أنطاكية">Antioch</a></li>
                     <li><a href="#" data-en="Nashville" data-ar="ناشفيل">Nashville</a></li>
@@ -2413,10 +2413,62 @@
             langButton.textContent = currentLanguage === 'en' ? 'العربية' : 'English';
         }
 
-        // Mobile menu
+        // Enhanced Mobile Menu with overlay and scroll lock
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
+            const body = document.body;
+
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                body.style.overflow = '';
+                removeMobileMenuOverlay();
+            } else {
+                mobileMenu.classList.add('active');
+                body.style.overflow = 'hidden';
+                createMobileMenuOverlay();
+            }
+        }
+
+        // Create overlay for mobile menu
+        function createMobileMenuOverlay() {
+            // Remove existing overlay if any
+            removeMobileMenuOverlay();
+
+            const overlay = document.createElement('div');
+            overlay.id = 'mobileMenuOverlay';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(5px);
+                z-index: 1000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+
+            document.body.appendChild(overlay);
+
+            // Trigger animation
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 10);
+
+            // Close menu when clicking overlay
+            overlay.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Remove overlay
+        function removeMobileMenuOverlay() {
+            const overlay = document.getElementById('mobileMenuOverlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.remove();
+                }, 300);
+            }
         }
 
         // Booking modal
