@@ -1255,7 +1255,7 @@
             transform: rotate(90deg);
         }
 
-        /* Mobile Menu */
+        /* Enhanced Mobile Menu */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -1263,21 +1263,36 @@
             color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            touch-action: manipulation;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--glass);
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.95);
         }
 
         .mobile-menu {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 80%;
+            width: 85%;
             max-width: 400px;
-            height: 100%;
+            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height for mobile */
             background: var(--bg-darker);
             backdrop-filter: blur(20px);
             border-left: 1px solid var(--glass-border);
             padding: 2rem;
-            transition: right 0.3s ease;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1001;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .mobile-menu.active {
@@ -1289,6 +1304,12 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .mobile-menu-header .logo {
+            font-size: 1.2rem;
         }
 
         .mobile-nav {
@@ -1296,18 +1317,58 @@
         }
 
         .mobile-nav li {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .mobile-nav li:last-child {
+            border-bottom: none;
         }
 
         .mobile-nav a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 1rem 0;
+            position: relative;
+            touch-action: manipulation;
         }
 
-        .mobile-nav a:hover {
+        .mobile-nav a:hover,
+        .mobile-nav a:focus {
             color: var(--accent);
+            padding-left: 1rem;
+            background: var(--glass);
+        }
+
+        .mobile-nav a:active {
+            background: var(--glass-border);
+        }
+
+        /* Touch-friendly close button */
+        .close-modal {
+            min-width: 44px;
+            min-height: 44px;
+            touch-action: manipulation;
+        }
+
+        .close-modal:active {
+            transform: scale(0.9);
+        }
+
+        /* Improved language toggle in mobile menu */
+        .mobile-menu .lang-toggle {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            width: 100%;
+            touch-action: manipulation;
+        }
+
+        .mobile-menu .lang-toggle:active {
+            transform: scale(0.98);
         }
 
         /* Enhanced Mobile Responsiveness */
@@ -1930,7 +1991,7 @@
                 <div class="service-icon">
                     <i class="fas fa-calculator"></i>
                 </div>
-                <h3 data-en="Tax Services" data-ar="الخدمات الضريبية">Tax Services</h3>
+                <h3 data-en="Tax Services" data-ar="الخدمات الضر��بية">Tax Services</h3>
                 <p data-en="Comprehensive tax preparation, planning, and consulting for individuals and businesses. Maximize your refunds and minimize your tax liability."
                    data-ar="إعداد الضرائب الشامل والتخطيط والاستشارة للأفراد والشركات.">
                     Comprehensive tax preparation, planning, and consulting for individuals and businesses. Maximize your refunds and minimize your tax liability.
@@ -1987,7 +2048,7 @@
                 </div>
                 <h3 data-en="IRS Representation" data-ar="تمثيل ضريبي">IRS Representation</h3>
                 <p data-en="Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business."
-                   data-ar="تمثيل مهني لمراجعات مصلحة الضرا��ب والطعون وخدمات حل الضرائب.">
+                   data-ar="تمثيل مهني لمراجعات مصلحة الضرائب والطعون وخدمات حل الضرائب.">
                     Professional representation for IRS audits, appeals, and tax resolution services. We'll handle the complexities while you focus on your business.
                 </p>
             </div>
@@ -2037,7 +2098,7 @@
 
         <!-- External Links Section -->
         <div class="external-links" style="text-align: center; margin-top: 3rem;">
-            <h3 style="margin-bottom: 2rem; color: var(--accent);" data-en="Connect With John Gobran" data-ar="تواصل مع جو�� جبران">Connect With John Gobran</h3>
+            <h3 style="margin-bottom: 2rem; color: var(--accent);" data-en="Connect With John Gobran" data-ar="تواصل مع جون جبران">Connect With John Gobran</h3>
             <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
                 <a href="https://www.homes.com/real-estate-agents/john-gobran/2sb6k89/" target="_blank" class="btn btn-secondary">
                     <i class="fas fa-home"></i>
@@ -2146,7 +2207,7 @@
                         <select id="interest" name="interest" required>
                             <option value="" data-en="Select Service" data-ar="اختر الخدمة">Select Service</option>
                             <option value="tax-prep" data-en="Tax Preparation" data-ar="إعداد الضرائب">Tax Preparation</option>
-                            <option value="payroll" data-en="Payroll Services" data-ar="خ��مات الرواتب">Payroll Services</option>
+                            <option value="payroll" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</option>
                             <option value="bookkeeping" data-en="Bookkeeping" data-ar="مسك الدفاتر">Bookkeeping</option>
                             <option value="planning" data-en="Financial Planning" data-ar="التخطيط المالي">Financial Planning</option>
                             <option value="business" data-en="Business Consulting" data-ar="استشارات الأعمال">Business Consulting</option>
@@ -2191,7 +2252,7 @@
             </div>
 
             <div class="footer-section">
-                <h3 data-en="Areas Served" data-ar="ال��ناطق المخدومة">Areas Served</h3>
+                <h3 data-en="Areas Served" data-ar="المناطق المخدومة">Areas Served</h3>
                 <ul class="footer-links">
                     <li><a href="#" data-en="Antioch" data-ar="أنطاكية">Antioch</a></li>
                     <li><a href="#" data-en="Nashville" data-ar="ناشفيل">Nashville</a></li>
