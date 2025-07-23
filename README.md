@@ -1,6 +1,7 @@
 # John-Gobran  https://johngobran.github.io/John-Gobran/ 
 
-John Gobran — Licensed Real Estate Agent in Nashville, TN
+John Gobran — Licensed Real Estate Agent in Nashville, TN 
+
 About John:
 
 Over 5 years of experience in residential and commercial real estate in Middle Tennessee
